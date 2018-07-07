@@ -106,7 +106,7 @@ avg(&mme) as avg_dailymme_per_rx
 CREATE TABLE threshold&qtr&class as select
 
 &REPORT, 
-		WHEN     &class._prescriber_count GE &prescriber_threshold and 
+	CASE    WHEN     &class._prescriber_count GE &prescriber_threshold and 
 			 &class._dispensary_count GE &dispensary_threshold then 1 
 			 else 0 
 		END as &class._MPE_STATUS,  
